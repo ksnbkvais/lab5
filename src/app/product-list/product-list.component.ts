@@ -1,4 +1,4 @@
-import { Component, Input  } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { products } from '../amazon';
 
@@ -8,18 +8,13 @@ import { products } from '../amazon';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent {
-  @Input() cat!: number;
+
   products = products;
 
   share(link?:string) {
     window.location.href = 'https://t.me/ksnbkvais'+link;
   }
-  like(id?:number){
-    this.products[id! - 1].likes += 1;
-  }
-  remove(id?:any){
-    document.getElementById(id)!.style.display = 'none';
-  }
+
   onNotify() {
     window.alert('You will be notified when the product goes on sale');
   }
